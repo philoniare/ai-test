@@ -3,38 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR USDZ Viewer</title>
+    <title>Menu Thumbnails with AR</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            padding: 20px;
+            background-color: #FCF9D1;
+            font-family: Arial, sans-serif;
         }
-        .container {
-            text-align: center;
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
         }
         .ar-button {
-            display: inline-block;
+            margin-top: 10px;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #590e0e;
             color: white;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
-            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+        }
+        .full-width {
+            grid-column: 1 / -1;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>AR Object Viewer</h1>
-        <p>Click the button below to view the 3D object in AR (iOS devices only)</p>
-        <a rel="ar" href="test.usdz" class="ar-button">
-            View in AR
-        </a>
+<div class="grid-container">
+    <div class="grid-item">
+        <img src="one.png" alt="Menu Item One">
+        <a rel="ar" href="dish_one.usdz" class="ar-button">AR</a>
     </div>
+    <div class="grid-item">
+        <img src="two.png" alt="Menu Item Two">
+        <a rel="ar" href="dish_two.usdz" class="ar-button">AR</a>
+    </div>
+    <div class="grid-item full-width">
+        <img src="three.png" alt="Menu Item Three">
+        <a rel="ar" href="dish_one.usdz" class="ar-button">AR</a>
+    </div>
+    <div class="grid-item full-width">
+        <img src="four.png" alt="Menu Item Four">
+        <a rel="ar" href="dish_two.usdz" class="ar-button">AR</a>
+    </div>
+</div>
 </body>
 </html>
